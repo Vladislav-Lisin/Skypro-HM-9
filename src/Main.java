@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+
 public class Main {
     public static void main(String[] args) {
 
@@ -16,8 +17,19 @@ public class Main {
 
         //task 2
         int[] MondaysExpenses2 = new int[]{10, 20, 5, 1000, 150};
-        Arrays.sort(MondaysExpenses2);
-        System.out.println("Минимальная сумма трат за неделю составила " + MondaysExpenses2[0] + "  рублей. Максимальная сумма трат за неделю составила " + MondaysExpenses2[MondaysExpenses2.length - 1] + " рублей.");
+//        Arrays.sort(MondaysExpenses2);
+        int maxExpenses2 = -1;
+        int minExpenses2 = 1000000000;
+        for (int i : MondaysExpenses2) {
+            if (maxExpenses2 < i){
+                maxExpenses2 = i;
+            }
+            if (minExpenses2 > i) {
+                minExpenses2 = i;
+            }
+        }
+        System.out.println("Минимальная сумма трат за неделю составила " + minExpenses2 + "  рублей. Максимальная сумма трат за неделю составила " + maxExpenses2 + " рублей.");
+//        System.out.println("Минимальная сумма трат за неделю составила " + MondaysExpenses2[0] + "  рублей. Максимальная сумма трат за неделю составила " + MondaysExpenses2[MondaysExpenses2.length - 1] + " рублей.");
 
         //task 3
         float[] MondaysExpenses3 = new float[]{52, 66, 91, 240, 144};
@@ -32,18 +44,22 @@ public class Main {
         //task 4
         char[] Name = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
 
-        int left = 0;
-        int right = Name.length - 1;
-        while (left < right) {
-            char temp = Name[left];
-            Name[left] = Name[right];
-            Name[right] = temp;
-            left++;
-            right--;
+        for (int i = (Name.length - 1); i >= 0; i--) {
+            System.out.print(Name[i]);
         }
-        for (char i : Name) {
-            System.out.print(i);
-        }
+
+//        int left = 0;
+//        int right = Name.length - 1;
+//        while (left < right) {
+//            char temp = Name[left];
+//            Name[left] = Name[right];
+//            Name[right] = temp;
+//            left++;
+//            right--;
+//        }
+//        for (char i : Name) {
+//            System.out.print(i);
+//        }
     }
 
 }
